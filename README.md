@@ -28,4 +28,4 @@ Required to create an application that an employee can use to generate random pa
 * THEN the password is either displayed in an alert or written to the page
 
 # Website
-https://jwright323.github.io/Password_Generator/index.html
+https://jwright323.github.io/Password_Generator/
