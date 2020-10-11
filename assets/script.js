@@ -14,9 +14,8 @@ let pwNum;
 let pwSpecChar;
 
 function generatePW() {
-    pwLength = '';
-
-
+    pwLength = " ";
+    
 //Password will be checked for minimum and maximum length. If not long enough, alert will be printed,
 //along with how many characters the invalid password actually is.
 while (isNaN(pwLength) || pwLength < 8 || pwLength > 128) {
@@ -24,13 +23,15 @@ while (isNaN(pwLength) || pwLength < 8 || pwLength > 128) {
 
     if (pwLength === null) {
         alert("Restarting process");
-        return ' ';
+        return " ";
     }
-    else if (isNaN(pwLength) || pwLength < 8 || pwLength > 128) {
+    else {
+        if (isNaN(pwLength) || pwLength < 8 || pwLength > 128) {
             alert("Password length does not meet requirements, please try again!");
         }
+    }
 }
-            
+
 //An alert to tell you how many characters that your password will be.
 alert ("Your password will be ${pwLength} characters in length.");
 
@@ -49,30 +50,30 @@ while (pwAbcUp === false && pwAbcLow === false && pwNum === false && pwSpecChar 
     var pwSpecChar = confirm ("Click OK to confirm if you want to include special characters");   
 } 
 
-var pwChars = []
-      
-if (pwAbcUp) {
-    pwChars = pwChars.concat(pwAbcUp)
-}
-if (pwAbcLow) {
-    pwChars = pwChars.concat(pwAbcLow)
-} 
-if (pwNum) {
-    pwChars = pwChars.concat(pwNum)
-}
-if (pwSpecChar) {
-    pwChars = pwChars.concat(pwSpecChar)
-}
-var randPW = ""
-for (var i = 0; i < pwLength; i++) {
-    randPW = randPW + pwChars[Math.floor(Math.random() * pwChars.length)];
-}
-return randPW;
-}
+    var pwChars = []
+        
+    if (pwAbcUp) {
+        pwChars = pwChars.concat(pwAbcUp)
+    }
+    if (pwAbcLow) {
+        pwChars = pwChars.concat(pwAbcLow)
+    } 
+    if (pwNum) {
+        pwChars = pwChars.concat(pwNum)
+    }
+    if (pwSpecChar) {
+        pwChars = pwChars.concat(pwSpecChar)
+    }
+    var randPW = ""
+    for (var i = 0; i < pwLength; i++) {
+        randPW = randPW + pwChars[Math.floor(Math.random() * pwChars.length)];
+    }
+    return randPW;
+    }
 
 //Writes password to "Your Secure Password" box
-function writePassword() {
-var password = generatePW();
-var passwordText = document.querySelector("#password");
-passwordText.value = password;
+    function writePassword() {
+        var password = generatePW();
+        var passwordText = document.querySelector("#password");
+        passwordText.value = password;
 }
