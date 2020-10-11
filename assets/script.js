@@ -15,7 +15,7 @@ let pwSpecChar;
 
 function generatePW() {
     pwLength = '';
-}
+
 
 //Password will be checked for minimum and maximum length. If not long enough, alert will be printed,
 //along with how many characters the invalid password actually is.
@@ -68,6 +68,7 @@ for (var i = 0; i < pwLength; i++) {
     randPW = randPW + pwChars[Math.floor(Math.random() * pwChars.length)];
 }
 return randPW;
+}
 
 //Writes password to "Your Secure Password" box
 function writePassword() {
