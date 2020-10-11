@@ -74,6 +74,6 @@ while (pwAbcUp === false && pwAbcLow === false && pwNum === false && pwSpecChar 
 //Writes password to "Your Secure Password" box
     function writePW() {
         var pw = generatePW();
-        var pwText = document.querySelector("#password");
+        var pwText = document.querySelector("#pw");
         pwText.value = pw;
 }
