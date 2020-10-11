@@ -84,7 +84,7 @@ h1, h2 {
 }
 
 /* Styling for input area of the generated password */
-#password {
+#pw {
   appearance: none;
   border: none;
   display: block;
