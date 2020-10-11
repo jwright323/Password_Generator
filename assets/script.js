@@ -64,7 +64,7 @@ while (pwAbcUp === false && pwAbcLow === false && pwNum === false && pwSpecChar 
     if (pwSpecChar) {
         pwChars = pwChars.concat(pwSpecChar)
     }
-    var randPW = ""
+    var randPW = " "
     for (var i = 0; i < pwLength; i++) {
         randPW = randPW + pwChars[Math.floor(Math.random() * pwChars.length)];
     }
@@ -73,7 +73,7 @@ while (pwAbcUp === false && pwAbcLow === false && pwNum === false && pwSpecChar 
 
 //Writes password to "Your Secure Password" box
     function writePW() {
-        var password = generatePW();
-        var passwordText = document.querySelector("#password");
-        passwordText.value = password;
+        var pw = generatePW();
+        var pwText = document.querySelector("#password");
+        pwText.value = pw;
 }
