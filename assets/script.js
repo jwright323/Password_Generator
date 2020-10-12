@@ -4,7 +4,7 @@ document.querySelector("#generate").addEventListener("click", writePW);
 const alphaUp = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 const alphaLow = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 const number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-const pwSpecChar = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "{", "|", "}", "~"];
+const specialChar = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "{", "|", "}", "~"];
 
 //Variables
 let pwLength = "";
@@ -33,7 +33,7 @@ while (isNaN(pwLength) || pwLength < 8 || pwLength > 128) {
 }
 
 //An alert to tell you how many characters that your password will be.
-alert ("Your password will be ${pwLength} characters in length.");
+alert("Your password will be ${pwLength} characters in length");
 
 //Determines what characters will be included in the new password being created.va
 var pwAbcUp = confirm ("Please click OK to include uppercase letter in your new password.");
@@ -53,16 +53,16 @@ while (pwAbcUp === false && pwAbcLow === false && pwNum === false && pwSpecChar 
     var pwChars = []
         
     if (pwAbcUp) {
-        pwChars = pwChars.concat(pwAbcUp)
+        pwChars = pwChars.concat(alphaUp)
     }
     if (pwAbcLow) {
-        pwChars = pwChars.concat(pwAbcLow)
+        pwChars = pwChars.concat(alphaLow)
     } 
     if (pwNum) {
-        pwChars = pwChars.concat(pwNum)
+        pwChars = pwChars.concat(number)
     }
     if (pwSpecChar) {
-        pwChars = pwChars.concat(pwSpecChar)
+        pwChars = pwChars.concat(specialChar)
     }
     var randPW = " "
     for (var i = 0; i < pwLength; i++) {
