@@ -14,7 +14,7 @@ let pwNum;
 let pwSpecChar;
 
 function generatePW() {
-    pwLength = " ";
+    pwLength = '';
     
 //Password will be checked for minimum and maximum length. If not long enough, alert will be printed,
 //along with how many characters the invalid password actually is.
@@ -33,21 +33,21 @@ while (isNaN(pwLength) || pwLength < 8 || pwLength > 128) {
 }
 
 //An alert to tell you how many characters that your password will be.
-alert("Your password will be ${pwLength} characters in length.");
+alert(`Your password will have ${pwLength} characters`);
 
 //Determines what characters will be included in the new password being created.va
-var pwAbcUp = confirm ("Please click OK to include an uppercase letter(s) in your new password.");
-var pwAbcLow = confirm ("Please click OK to include a lowercase letter in your new password.");
-var pwNum = confirm ("Please click OK to include number(s) in your new password.");
-var pwSpecChar = confirm ("Please click OK to include special characters in your new password.");
+var pwAbcUp = confirm ("Your new password must include an uppercase letter(s).");
+var pwAbcLow = confirm ("Your new password must include a lowercase letter(s).");
+var pwNum = confirm ("Your new password must include number(s).");
+var pwSpecChar = confirm ("Your new password must include special characters.");
 
 // Alert for if you do not choose the req'd parameters
 while (pwAbcUp === false && pwAbcLow === false && pwNum === false && pwSpecChar === false) {
     alert ("You must choose at least one parameter");
-    var pwAbcUp = confirm ("Click OK to confirm if you want to include uppercase characters.");
-    var pwAbcLow = confirm ("Click OK to confirm if you want to include lowercase characters.");    
-    var pwNum = confirm ("Click OK to confirm if you want to include numbers.");
-    var pwSpecChar = confirm ("Click OK to confirm if you want to include special characters.");   
+    var pwAbcUp = confirm ("Click OK to confirm that you want to include uppercase characters");
+    var pwAbcLow = confirm ("Click OK to confirm that you want to include lowercase characters");    
+    var pwNum = confirm ("Click OK to confirm that you want to include numbers");
+    var pwSpecChar = confirm ("Click OK to confirm that you want to include special characters");   
 } 
 
     var pwChars = []
